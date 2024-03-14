@@ -27,13 +27,13 @@
 </li>
 </ul>
 <h4 id="性能要求"><a href="#性能要求" class="headerlink" title="性能要求"></a>性能要求</h4><p>在输出与输入表达式等价, 且输出满足合法性要求的前提下, 使输出的字符数尽可能短.</p>
-<h3 id="设计分析"><a href="#设计分析" class="headerlink" title="设计分析"></a>设计分析</h3><p><img src="/%5Cimg%5C2024OO%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93%5Chw1_uml.png" alt="hw1_类关系示意图"></p>
+<h3 id="设计分析"><a href="#设计分析" class="headerlink" title="设计分析"></a>设计分析</h3><p><img src="/img/2024OO%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/hw1_uml.png" alt="hw1_类关系示意图"></p>
 <p>本次设计共包含8个类, 其中<code>MainClass</code>为主类, 提供程序入口函数<code>void main(String[])</code>.</p>
 <h4 id="输入处理"><a href="#输入处理" class="headerlink" title="输入处理"></a>输入处理</h4><p>利用<code>Token</code> <code>ReadTokens</code>两个类来实现对输入的处理.</p>
 <p>在Token类中, 定义了<code>Type</code>用来区分不同的字符串所代表的类型, 如幂函数, 括号, 加号等, 并且可以通过<code>toString</code>函数获得这个Token存储的字符串.</p>
 <p>对从标准读入中获取的字符串, 通过实例化一个<code>ReadToken</code>对象, 将其转化成一个<code>Token</code>对象的序列. 在<code>ReadToken</code>类中, 封装了检测可用性, 获取当前Token和光标下移等成员函数, 减少对外暴露细节, 增强可用性. 同时, 对于连续的+&#x2F;-号, 记录-号的个数, 仅保存一个化简后的结果.</p>
 <p><strong>解析读入的表达式</strong>: 采用递归下降, 建立专门的类<code>Parser</code>进行解析. 类中提供了<code>parseExpr()</code> <code>parseTerm()</code> <code>parseFactor()</code>三个方法, 分别用来解析表达式、项和因子. 根据递归下降法的原则, 其调用关系如下图所示:</p>
-<p><img src="/%5Cimg%5C2024OO%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93%5Cparse%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E5%9B%BE.png" alt="parse方法调用图"><br>可以归纳为以下几条原则:</p>
+<p><img src="/img/2024OO%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/parse%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E5%9B%BE.png" alt="parse方法调用图"><br>可以归纳为以下几条原则:</p>
 <ol>
 <li>遇到左括号解析表达式.</li>
 <li>解析表达式时, 调用parseTerm, 遇到+&#x2F;-号解析表达式; 遇到右括号结束解析; 返回一个Expr, 为解析结果.</li>
@@ -127,7 +127,7 @@
 </ul>
 <h3 id="感想与经验总结-1"><a href="#感想与经验总结-1" class="headerlink" title="感想与经验总结"></a>感想与经验总结</h3><p><font color="red" size=6 face="楷体"> OO Unit1 完结撒花! </font></p>
 <p>最终结构如图. 源代码可以查看github: </p>
-<p><img src="/%5Cimg%5C2024OO%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93%5Chw3_uml.png" alt="hw3_uml"></p>
+<p><img src="/img/2024OO%E7%AC%AC%E4%B8%80%E5%8D%95%E5%85%83%E5%8F%8D%E6%80%9D%E4%B8%8E%E6%80%BB%E7%BB%93/hw3_uml.png" alt="hw3_uml"></p>
 <p>本次作业改动较小, 如果前两次轮子造的好, 总体工作量将在半小时以内.<del>感谢课程组不杀之恩.</del><br>仍然有一些可能的优化方向, 记录在这里, 以便后人继续探索:</p>
 <ul>
 <li><p>时间</p>

@@ -19,7 +19,7 @@
 </ol>
 <p>其中7号寄存器在片选信号<code>sel</code>（即这两条指令的后三位，见英文指令集）为0时，保存数值为<code>imLoBoundary</code>，<code>sel</code>为1时，保存数值为<code>dmLoBoundary</code>。</p>
 <p>21号寄存器在片选信号<code>sel</code>为0时，保存数值为<code>imHiBoundary</code>，<code>sel</code>为1时，保存数值为<code>dmHiBoundary</code>。</p>
-<p><img src="/img/p7%E4%B8%8A%E6%9C%BA%E5%86%92%E9%99%A9%E8%AE%B0/p7%E4%B8%8A%E6%9C%BA-1.png" alt="image-20231212214016770"></p>
+<p><img src="/img/p7%E4%B8%8A%E6%9C%BA%E5%86%92%E9%99%A9%E8%AE%B0/p7%E4%B8%8A%E6%9C%BA-1.png" alt="MFC0"></p>
 <ol start="2">
 <li>实现<code>cp0</code>中<code>SR</code>寄存器的16、17位。<br>当且仅当<code>SR[16]==1</code>时，对访问im的地址合法性进行检查。若不合法，应给出<code>AdEL</code>异常。</li>
 </ol>
